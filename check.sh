@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 ###################################################################
 # Functions: this script from polling system status
 # Info: be suitable for CentOS/RHEL 6/7 
