@@ -1,4 +1,4 @@
-#!/bin/bash
+ï»¿#!/bin/bash
 ###################################################################
 # Functions: this script from polling system status
 # Info: be suitable for CentOS/RHEL 6/7 
@@ -28,55 +28,55 @@ RESULTFILE="$LOGPATH/HostDailyCheck-`hostname`-`date +%Y%m%d`.txt"
 
 
 # define globle variable
-report_DateTime=""    #ÈÕÆÚ ok
-report_Hostname=""    #Ö÷»úÃû ok
-report_OSRelease=""    #·¢ĞĞ°æ±¾ ok
-report_Kernel=""    #ÄÚºË ok
-report_Language=""    #ÓïÑÔ/±àÂë ok
-report_LastReboot=""    #×î½üÆô¶¯Ê±¼ä ok
-report_Uptime=""    #ÔËĞĞÊ±¼ä£¨Ìì£© ok
-report_CPUs=""    #CPUÊıÁ¿ ok
-report_CPUType=""    #CPUÀàĞÍ ok
-report_Arch=""    #CPU¼Ü¹¹ ok
-report_MemTotal=""    #ÄÚ´æ×ÜÈİÁ¿(MB) ok
-report_MemFree=""    #ÄÚ´æÊ£Óà(MB) ok
-report_MemUsedPercent=""    #ÄÚ´æÊ¹ÓÃÂÊ% ok
-report_DiskTotal=""    #Ó²ÅÌ×ÜÈİÁ¿(GB) ok
-report_DiskFree=""    #Ó²ÅÌÊ£Óà(GB) ok
-report_DiskUsedPercent=""    #Ó²ÅÌÊ¹ÓÃÂÊ% ok
-report_InodeTotal=""    #Inode×ÜÁ¿ ok
-report_InodeFree=""    #InodeÊ£Óà ok
-report_InodeUsedPercent=""    #InodeÊ¹ÓÃÂÊ ok
-report_IP=""    #IPµØÖ· ok
-report_MAC=""    #MACµØÖ· ok
-report_Gateway=""    #Ä¬ÈÏÍø¹Ø ok
+report_DateTime=""    #æ—¥æœŸ ok
+report_Hostname=""    #ä¸»æœºå ok
+report_OSRelease=""    #å‘è¡Œç‰ˆæœ¬ ok
+report_Kernel=""    #å†…æ ¸ ok
+report_Language=""    #è¯­è¨€/ç¼–ç  ok
+report_LastReboot=""    #æœ€è¿‘å¯åŠ¨æ—¶é—´ ok
+report_Uptime=""    #è¿è¡Œæ—¶é—´ï¼ˆå¤©ï¼‰ ok
+report_CPUs=""    #CPUæ•°é‡ ok
+report_CPUType=""    #CPUç±»å‹ ok
+report_Arch=""    #CPUæ¶æ„ ok
+report_MemTotal=""    #å†…å­˜æ€»å®¹é‡(MB) ok
+report_MemFree=""    #å†…å­˜å‰©ä½™(MB) ok
+report_MemUsedPercent=""    #å†…å­˜ä½¿ç”¨ç‡% ok
+report_DiskTotal=""    #ç¡¬ç›˜æ€»å®¹é‡(GB) ok
+report_DiskFree=""    #ç¡¬ç›˜å‰©ä½™(GB) ok
+report_DiskUsedPercent=""    #ç¡¬ç›˜ä½¿ç”¨ç‡% ok
+report_InodeTotal=""    #Inodeæ€»é‡ ok
+report_InodeFree=""    #Inodeå‰©ä½™ ok
+report_InodeUsedPercent=""    #Inodeä½¿ç”¨ç‡ ok
+report_IP=""    #IPåœ°å€ ok
+report_MAC=""    #MACåœ°å€ ok
+report_Gateway=""    #é»˜è®¤ç½‘å…³ ok
 report_DNS=""    #DNS ok
-report_Listen=""    #¼àÌı ok
+report_Listen=""    #ç›‘å¬ ok
 report_Selinux=""    #Selinux ok
-report_Firewall=""    #·À»ğÇ½ ok
-report_USERs=""    #ÓÃ»§ ok
-report_USEREmptyPassword=""   #¿ÕÃÜÂëÓÃ»§ ok
-report_USERTheSameUID=""      #ÏàÍ¬IDµÄÓÃ»§ ok 
-report_PasswordExpiry=""    #ÃÜÂë¹ıÆÚ£¨Ìì£© ok
-report_RootUser=""    #rootÓÃ»§ ok
-report_Sudoers=""    #sudoÊÚÈ¨  ok
-report_SSHAuthorized=""    #SSHĞÅÈÎÖ÷»ú ok
-report_SSHDProtocolVersion=""    #SSHĞ­Òé°æ±¾ ok
-report_SSHDPermitRootLogin=""    #ÔÊĞírootÔ¶³ÌµÇÂ¼ ok
-report_DefunctProsess=""    #½©Ê¬½ø³ÌÊıÁ¿ ok
-report_SelfInitiatedService=""    #×ÔÆô¶¯·şÎñÊıÁ¿ ok
-report_SelfInitiatedProgram=""    #×ÔÆô¶¯³ÌĞòÊıÁ¿ ok
-report_RuningService=""           #ÔËĞĞÖĞ·şÎñÊı  ok
-report_Crontab=""    #¼Æ»®ÈÎÎñÊı ok
-report_Syslog=""    #ÈÕÖ¾·şÎñ ok
+report_Firewall=""    #é˜²ç«å¢™ ok
+report_USERs=""    #ç”¨æˆ· ok
+report_USEREmptyPassword=""   #ç©ºå¯†ç ç”¨æˆ· ok
+report_USERTheSameUID=""      #ç›¸åŒIDçš„ç”¨æˆ· ok 
+report_PasswordExpiry=""    #å¯†ç è¿‡æœŸï¼ˆå¤©ï¼‰ ok
+report_RootUser=""    #rootç”¨æˆ· ok
+report_Sudoers=""    #sudoæˆæƒ  ok
+report_SSHAuthorized=""    #SSHä¿¡ä»»ä¸»æœº ok
+report_SSHDProtocolVersion=""    #SSHåè®®ç‰ˆæœ¬ ok
+report_SSHDPermitRootLogin=""    #å…è®¸rootè¿œç¨‹ç™»å½• ok
+report_DefunctProsess=""    #åƒµå°¸è¿›ç¨‹æ•°é‡ ok
+report_SelfInitiatedService=""    #è‡ªå¯åŠ¨æœåŠ¡æ•°é‡ ok
+report_SelfInitiatedProgram=""    #è‡ªå¯åŠ¨ç¨‹åºæ•°é‡ ok
+report_RuningService=""           #è¿è¡Œä¸­æœåŠ¡æ•°  ok
+report_Crontab=""    #è®¡åˆ’ä»»åŠ¡æ•° ok
+report_Syslog=""    #æ—¥å¿—æœåŠ¡ ok
 report_SNMP=""    #SNMP  OK
 report_NTP=""    #NTP ok
-report_JDK=""    #JDK°æ±¾ ok
+report_JDK=""    #JDKç‰ˆæœ¬ ok
 
 
 function version(){
     echo ""
-    echo "System Polling£ºVersion $Script_Version "
+    echo "System Pollingï¼šVersion $Script_Version "
     echo ""
 }
 
@@ -89,15 +89,15 @@ function getCpuStatus(){
     CPU_Kernels=$(grep "cores" /proc/cpuinfo|uniq| awk -F ': ' '{print $2}')
     CPU_Type=$(grep "model name" /proc/cpuinfo | awk -F ': ' '{print $2}' | sort | uniq)
     CPU_Arch=$(uname -m)
-    echo "ÎïÀíCPU¸öÊı:$Physical_CPUs"
-    echo "Âß¼­CPU¸öÊı:$Virt_CPUs"
-    echo "Ã¿CPUºËĞÄÊı:$CPU_Kernels"
-    echo "    CPUĞÍºÅ:$CPU_Type"
-    echo "    CPU¼Ü¹¹:$CPU_Arch"
+    echo "ç‰©ç†CPUä¸ªæ•°:$Physical_CPUs"
+    echo "é€»è¾‘CPUä¸ªæ•°:$Virt_CPUs"
+    echo "æ¯CPUæ ¸å¿ƒæ•°:$CPU_Kernels"
+    echo "    CPUå‹å·:$CPU_Type"
+    echo "    CPUæ¶æ„:$CPU_Arch"
     # report information
-    report_CPUs=$Virt_CPUs    #CPUÊıÁ¿
-    report_CPUType=$CPU_Type  #CPUÀàĞÍ
-    report_Arch=$CPU_Arch     #CPU¼Ü¹¹
+    report_CPUs=$Virt_CPUs    #CPUæ•°é‡
+    report_CPUType=$CPU_Type  #CPUç±»å‹
+    report_Arch=$CPU_Arch     #CPUæ¶æ„
 }
 
 
@@ -114,9 +114,9 @@ function getMemStatus(){
     MemFree=$(grep MemFree /proc/meminfo| awk '{print $2}')    #KB
     let MemUsed=MemTotal-MemFree
     MemPercent=$(awk "BEGIN {if($MemTotal==0){printf 100}else{printf \"%.2f\",$MemUsed*100/$MemTotal}}")
-    report_MemTotal="$((MemTotal/1024))""MB"        #ÄÚ´æ×ÜÈİÁ¿(MB)
-    report_MemFree="$((MemFree/1024))""MB"          #ÄÚ´æÊ£Óà(MB)
-    report_MemUsedPercent="$(awk "BEGIN {if($MemTotal==0){printf 100}else{printf \"%.2f\",$MemUsed*100/$MemTotal}}")""%"   #ÄÚ´æÊ¹ÓÃÂÊ%
+    report_MemTotal="$((MemTotal/1024))""MB"        #å†…å­˜æ€»å®¹é‡(MB)
+    report_MemFree="$((MemFree/1024))""MB"          #å†…å­˜å‰©ä½™(MB)
+    report_MemUsedPercent="$(awk "BEGIN {if($MemTotal==0){printf 100}else{printf \"%.2f\",$MemUsed*100/$MemTotal}}")""%"   #å†…å­˜ä½¿ç”¨ç‡%
 }
 
 
@@ -137,12 +137,12 @@ function getDiskStatus(){
     inodeused=$(echo "$inodedata" | awk '{total+=$4}END{print total}')
     inodefree=$((inodetotal-inodeused))
     inodeusedpercent=$(echo $inodetotal $inodeused | awk '{if($1==0){printf 100}else{printf "%.2f",$2*100/$1}}')
-    report_DiskTotal=$((disktotal/1024/1024))"GB"   #Ó²ÅÌ×ÜÈİÁ¿(GB)
-    report_DiskFree=$((diskfree/1024/1024))"GB"     #Ó²ÅÌÊ£Óà(GB)
-    report_DiskUsedPercent="$diskusedpercent""%"    #Ó²ÅÌÊ¹ÓÃÂÊ%
-    report_InodeTotal=$((inodetotal/1000))"K"       #Inode×ÜÁ¿
-    report_InodeFree=$((inodefree/1000))"K"         #InodeÊ£Óà
-    report_InodeUsedPercent="$inodeusedpercent""%"  #InodeÊ¹ÓÃÂÊ%
+    report_DiskTotal=$((disktotal/1024/1024))"GB"   #ç¡¬ç›˜æ€»å®¹é‡(GB)
+    report_DiskFree=$((diskfree/1024/1024))"GB"     #ç¡¬ç›˜å‰©ä½™(GB)
+    report_DiskUsedPercent="$diskusedpercent""%"    #ç¡¬ç›˜ä½¿ç”¨ç‡%
+    report_InodeTotal=$((inodetotal/1000))"K"       #Inodeæ€»é‡
+    report_InodeFree=$((inodefree/1000))"K"         #Inodeå‰©ä½™
+    report_InodeUsedPercent="$inodeusedpercent""%"  #Inodeä½¿ç”¨ç‡%
     echo ""
 }
 
@@ -163,23 +163,23 @@ function getSystemStatus(){
     SELinux=$(/usr/sbin/sestatus | grep "SELinux status: " | awk '{print $3}')
     LastReboot=$(who -b | awk '{print $3,$4}')
     uptime=$(uptime | sed 's/.*up [,]?, .*/\1/')
-    echo "     ÏµÍ³£º$OS"
-    echo " ·¢ĞĞ°æ±¾£º$Release"
-    echo "     ÄÚºË£º$Kernel"
-    echo "   Ö÷»úÃû£º$Hostname"
-    echo "  SELinux£º$SELinux"
-    echo "ÓïÑÔ/±àÂë£º$default_LANG"
-    echo " µ±Ç°Ê±¼ä£º$(date +'%F %T')"
-    echo " ×îºóÆô¶¯£º$LastReboot"
-    echo " ÔËĞĞÊ±¼ä£º$uptime"
+    echo "     ç³»ç»Ÿï¼š$OS"
+    echo " å‘è¡Œç‰ˆæœ¬ï¼š$Release"
+    echo "     å†…æ ¸ï¼š$Kernel"
+    echo "   ä¸»æœºåï¼š$Hostname"
+    echo "  SELinuxï¼š$SELinux"
+    echo "è¯­è¨€/ç¼–ç ï¼š$default_LANG"
+    echo " å½“å‰æ—¶é—´ï¼š$(date +'%F %T')"
+    echo " æœ€åå¯åŠ¨ï¼š$LastReboot"
+    echo " è¿è¡Œæ—¶é—´ï¼š$uptime"
     # report information
-    report_DateTime=$(date +"%F %T")  #ÈÕÆÚ
-    report_Hostname="$Hostname"       #Ö÷»úÃû
-    report_OSRelease="$Release"       #·¢ĞĞ°æ±¾
-    report_Kernel="$Kernel"           #ÄÚºË
-    report_Language="$default_LANG"   #ÓïÑÔ/±àÂë
-    report_LastReboot="$LastReboot"   #×î½üÆô¶¯Ê±¼ä
-    report_Uptime="$uptime"           #ÔËĞĞÊ±¼ä£¨Ìì£©
+    report_DateTime=$(date +"%F %T")  #æ—¥æœŸ
+    report_Hostname="$Hostname"       #ä¸»æœºå
+    report_OSRelease="$Release"       #å‘è¡Œç‰ˆæœ¬
+    report_Kernel="$Kernel"           #å†…æ ¸
+    report_Language="$default_LANG"   #è¯­è¨€/ç¼–ç 
+    report_LastReboot="$LastReboot"   #æœ€è¿‘å¯åŠ¨æ—¶é—´
+    report_Uptime="$uptime"           #è¿è¡Œæ—¶é—´ï¼ˆå¤©ï¼‰
     report_Selinux="$SELinux"
     export LANG="$default_LANG"
     echo ""
@@ -192,14 +192,14 @@ function getServiceStatus(){
         conf=$(systemctl list-unit-files --type=service --state=enabled --no-pager | grep "enabled")
         process=$(systemctl list-units --type=service --state=running --no-pager | grep ".service")
         # report information
-        report_SelfInitiatedService="$(echo "$conf" | wc -l)"       #×ÔÆô¶¯·şÎñÊıÁ¿
-        report_RuningService="$(echo "$process" | wc -l)"           #ÔËĞĞÖĞ·şÎñÊıÁ¿
+        report_SelfInitiatedService="$(echo "$conf" | wc -l)"       #è‡ªå¯åŠ¨æœåŠ¡æ•°é‡
+        report_RuningService="$(echo "$process" | wc -l)"           #è¿è¡Œä¸­æœåŠ¡æ•°é‡
     else
-        conf=$(/sbin/chkconfig | grep -E ":on|:ÆôÓÃ")
-        process=$(/sbin/service --status-all 2>/dev/null | grep -E "is running|ÕıÔÚÔËĞĞ")
+        conf=$(/sbin/chkconfig | grep -E ":on|:å¯ç”¨")
+        process=$(/sbin/service --status-all 2>/dev/null | grep -E "is running|æ­£åœ¨è¿è¡Œ")
         # report information
-        report_SelfInitiatedService="$(echo "$conf" | wc -l)"       #×ÔÆô¶¯·şÎñÊıÁ¿
-        report_RuningService="$(echo "$process" | wc -l)"           #ÔËĞĞÖĞ·şÎñÊıÁ¿
+        report_SelfInitiatedService="$(echo "$conf" | wc -l)"       #è‡ªå¯åŠ¨æœåŠ¡æ•°é‡
+        report_RuningService="$(echo "$process" | wc -l)"           #è¿è¡Œä¸­æœåŠ¡æ•°é‡
     fi
     echo "Service Configure"
     echo "--------------------------------"
@@ -216,7 +216,7 @@ function getAutoStartStatus(){
     conf=$(grep -v "^#" /etc/rc.d/rc.local| sed '/^$/d')
     echo "$conf"
     # report information
-    report_SelfInitiatedProgram="$(echo $conf | wc -l)"    #×ÔÆô¶¯³ÌĞòÊıÁ¿
+    report_SelfInitiatedProgram="$(echo $conf | wc -l)"    #è‡ªå¯åŠ¨ç¨‹åºæ•°é‡
 }
 
 
@@ -243,9 +243,9 @@ function getNetworkStatus(){
     # report information
     IP=$(ip -f inet addr | grep -v 127.0.0.1 |  grep inet | awk '{print $NF,$2}' | tr '\n' ',' | sed 's/,$//')
     MAC=$(ip link | grep -v "LOOPBACK\|loopback" | awk '{print $2}' | sed 'N;s/\n//' | tr '\n' ',' | sed 's/,$//')
-    report_IP="$IP"            #IPµØÖ·
-    report_MAC=$MAC            #MACµØÖ·
-    report_Gateway="$GATEWAY"  #Ä¬ÈÏÍø¹Ø
+    report_IP="$IP"            #IPåœ°å€
+    report_MAC=$MAC            #MACåœ°å€
+    report_Gateway="$GATEWAY"  #é»˜è®¤ç½‘å…³
     report_DNS="$DNS"          #DNS
 }
 
@@ -283,14 +283,14 @@ function getCronStatus(){
     find /etc/cron* -type f | xargs -i ls -l {} | column  -t
     let Crontab=Crontab+$(find /etc/cron* -type f | wc -l)
     # report information
-    report_Crontab="$Crontab"    #¼Æ»®ÈÎÎñÊı
+    report_Crontab="$Crontab"    #è®¡åˆ’ä»»åŠ¡æ•°
 }
 
 function getHowLongAgo(){
-    # ¼ÆËãÒ»¸öÊ±¼ä´ÁÀëÏÖÔÚÓĞ¶à¾ÃÁË
+    # è®¡ç®—ä¸€ä¸ªæ—¶é—´æˆ³ç¦»ç°åœ¨æœ‰å¤šä¹…äº†
     datetime="$*"
-    [ -z "$datetime" ] && echo "´íÎóµÄ²ÎÊı£ºgetHowLongAgo() $*"
-    Timestamp=$(date +%s -d "$datetime")    #×ª»¯ÎªÊ±¼ä´Á
+    [ -z "$datetime" ] && echo "é”™è¯¯çš„å‚æ•°ï¼šgetHowLongAgo() $*"
+    Timestamp=$(date +%s -d "$datetime")    #è½¬åŒ–ä¸ºæ—¶é—´æˆ³
     Now_Timestamp=$(date +%s)
     Difference_Timestamp=$(($Now_Timestamp-$Timestamp))
     days=0;hours=0;minutes=0;
@@ -307,15 +307,15 @@ function getHowLongAgo(){
         let Difference_Timestamp=Difference_Timestamp-sec_in_hour
         let hours++
     done
-    echo "$days Ìì $hours Ğ¡Ê±Ç°"
+    echo "$days å¤© $hours å°æ—¶å‰"
 }
 
 
 function getUserLastLogin(){
-    # »ñÈ¡ÓÃ»§×î½üÒ»´ÎµÇÂ¼µÄÊ±¼ä£¬º¬Äê·İ
-    # ºÜÒÅº¶lastÃüÁî²»Ö§³ÖÏÔÊ¾Äê·İ£¬Ö»ÓĞ"last -t YYYYMMDDHHMMSS"±íÊ¾Ä³¸öÊ±¼äÖ®¼äµÄµÇÂ¼£¬ÎÒ
-    # ÃÇÖ»ÄÜÓÃ×î±¿µÄ·½·¨ÁË£¬¶Ô±È½ñÌìÖ®Ç°ºÍ½ñÄêÔªµ©Ö®Ç°£¨»òÕßÈ¥ÄêÖ®Ç°ºÍÇ°ÄêÖ®Ç°¡­¡­£©Ä³¸öÓÃ»§
-    # µÇÂ¼´ÎÊı£¬Èç¹ûµÇÂ¼Í³¼Æ´ÎÊıÓĞ±ä»¯£¬ÔòËµÃ÷×î½üÒ»´ÎµÇÂ¼ÊÇ½ñÄê¡£
+    # è·å–ç”¨æˆ·æœ€è¿‘ä¸€æ¬¡ç™»å½•çš„æ—¶é—´ï¼Œå«å¹´ä»½
+    # å¾ˆé—æ†¾lastå‘½ä»¤ä¸æ”¯æŒæ˜¾ç¤ºå¹´ä»½ï¼Œåªæœ‰"last -t YYYYMMDDHHMMSS"è¡¨ç¤ºæŸä¸ªæ—¶é—´ä¹‹é—´çš„ç™»å½•ï¼Œæˆ‘
+    # ä»¬åªèƒ½ç”¨æœ€ç¬¨çš„æ–¹æ³•äº†ï¼Œå¯¹æ¯”ä»Šå¤©ä¹‹å‰å’Œä»Šå¹´å…ƒæ—¦ä¹‹å‰ï¼ˆæˆ–è€…å»å¹´ä¹‹å‰å’Œå‰å¹´ä¹‹å‰â€¦â€¦ï¼‰æŸä¸ªç”¨æˆ·
+    # ç™»å½•æ¬¡æ•°ï¼Œå¦‚æœç™»å½•ç»Ÿè®¡æ¬¡æ•°æœ‰å˜åŒ–ï¼Œåˆ™è¯´æ˜æœ€è¿‘ä¸€æ¬¡ç™»å½•æ˜¯ä»Šå¹´ã€‚
     username=$1
     : ${username:="`whoami`"}
     thisYear=$(date +%Y)
@@ -327,7 +327,7 @@ function getUserLastLogin(){
             echo "Never Login"
             break
         elif [ $loginBeforeToday -gt $loginBeforeNewYearsDayOfThisYear ];then
-            lastDateTime=$(last -i $username | head -n1 | awk '{for(i=4;i<(NF-2);i++)printf"%s ",$i}')" $thisYear" #¸ñÊ½Èç: Sat Nov 2 20:33 2015
+            lastDateTime=$(last -i $username | head -n1 | awk '{for(i=4;i<(NF-2);i++)printf"%s ",$i}')" $thisYear" #æ ¼å¼å¦‚: Sat Nov 2 20:33 2015
             lastDateTime=$(date "+%Y-%m-%d %H:%M:%S" -d "$lastDateTime")
             echo "$lastDateTime"
             break
@@ -343,7 +343,7 @@ function getUserStatus(){
     # /etc/passwd the last modification time
     pwdfile="$(cat /etc/passwd)"
     Modify=$(stat /etc/passwd | grep Modify | tr '.' ' ' | awk '{print $2,$3}')
-    echo "/etc/passwd The last modification time£º$Modify ($(getHowLongAgo $Modify))"
+    echo "/etc/passwd The last modification timeï¼š$Modify ($(getHowLongAgo $Modify))"
     echo ""
     echo "A privileged user"
     echo "-----------------"
@@ -395,10 +395,10 @@ function getUserStatus(){
         USERTheSameUID="$USERTheSameUID $r,"
     done
     # report information
-    report_USERs="$USERs"    #ÓÃ»§
+    report_USERs="$USERs"    #ç”¨æˆ·
     report_USEREmptyPassword=$(echo $USEREmptyPassword | sed 's/^,//') 
     report_USERTheSameUID=$(echo $USERTheSameUID | sed 's/,$//') 
-    report_RootUser=$(echo $RootUser | sed 's/^,//')    #ÌØÈ¨ÓÃ»§
+    report_RootUser=$(echo $RootUser | sed 's/^,//')    #ç‰¹æƒç”¨æˆ·
 }
 
 
@@ -490,7 +490,7 @@ function getJDKStatus(){
 function getSyslogStatus(){
     echo ""
     echo "############################ Syslog Check ##########################"
-    echo "Service Status£º$(getState rsyslog)"
+    echo "Service Statusï¼š$(getState rsyslog)"
     echo ""
     echo "/etc/rsyslog.conf"
     echo "-----------------"
@@ -534,7 +534,7 @@ function getSNMPStatus(){
     echo ""
     echo "############################ SNMP Check ############################"
     status="$(getState snmpd)"
-    echo "Service Status£º$status"
+    echo "Service Statusï¼š$status"
     echo ""
     if [ -e /etc/snmp/snmpd.conf ];then
         echo "/etc/snmp/snmpd.conf"
@@ -548,7 +548,7 @@ function getSNMPStatus(){
 function getState(){
     if [[ $OS_Version < 7 ]];then
         if [ -e "/etc/init.d/$1" ];then
-            if [ `/etc/init.d/$1 status 2>/dev/null | grep -E "is running|ÕıÔÚÔËĞĞ" | wc -l` -ge 1 ];then
+            if [ `/etc/init.d/$1 status 2>/dev/null | grep -E "is running|æ­£åœ¨è¿è¡Œ" | wc -l` -ge 1 ];then
                 r="active"
             else
                 r="inactive"
@@ -569,9 +569,9 @@ function getSSHStatus(){
     echo "############################ SSH Check #############################"
     # Check the trusted host
     pwdfile="$(cat /etc/passwd)"
-    echo "Service Status£º$(getState sshd)"
+    echo "Service Statusï¼š$(getState sshd)"
     Protocol_Version=$(cat /etc/ssh/sshd_config | grep Protocol | awk '{print $2}')
-    echo "SSH Protocol Version£º$Protocol_Version"
+    echo "SSH Protocol Versionï¼š$Protocol_Version"
     echo ""
     echo "Trusted Host"
     echo "------------"
@@ -604,9 +604,9 @@ function getSSHStatus(){
     echo "--------------------"
     cat /etc/ssh/sshd_config | grep -v "^#" | sed '/^$/d'
     # report information
-    report_SSHAuthorized="$authorized"    #SSHĞÅÈÎÖ÷»ú
-    report_SSHDProtocolVersion="$Protocol_Version"    #SSHĞ­Òé°æ±¾
-    report_SSHDPermitRootLogin="$PermitRootLogin"    #ÔÊĞírootÔ¶³ÌµÇÂ¼
+    report_SSHAuthorized="$authorized"    #SSHä¿¡ä»»ä¸»æœº
+    report_SSHDProtocolVersion="$Protocol_Version"    #SSHåè®®ç‰ˆæœ¬
+    report_SSHDPermitRootLogin="$PermitRootLogin"    #å…è®¸rootè¿œç¨‹ç™»å½•
 }
 
 function getNTPStatus(){
@@ -614,7 +614,7 @@ function getNTPStatus(){
     echo ""
     echo "############################ NTP Check #############################"
     if [ -e /etc/ntp.conf ];then
-        echo "Service Status£º$(getState ntpd)"
+        echo "Service Statusï¼š$(getState ntpd)"
         echo ""
         echo "/etc/ntp.conf"
         echo "-------------"
@@ -716,12 +716,12 @@ function check(){
     getInstalledStatus
 }
 
-# Perform inspections and save the inspection results  #Ö´ĞĞ¼ì²é²¢±£´æ¼ì²é½á¹û
+# Perform inspections and save the inspection results  #æ‰§è¡Œæ£€æŸ¥å¹¶ä¿å­˜æ£€æŸ¥ç»“æœ
 check > $RESULTFILE
-echo "Check the result£º$RESULTFILE"
+echo "Check the resultï¼š$RESULTFILE"
 
-# Upload the result file  #ÉÏ´«¼ì²é½á¹ûµÄÎÄ¼ş
+# Upload the result file  #ä¸Šä¼ æ£€æŸ¥ç»“æœçš„æ–‡ä»¶
 #curl -F "filename=@$RESULTFILE" "$uploadHostDailyCheckApi" 2>/dev/null
 
-#Upload inspection result report  #ÉÏ´«¼ì²é½á¹ûµÄ±¨±í
+#Upload inspection result report  #ä¸Šä¼ æ£€æŸ¥ç»“æœçš„æŠ¥è¡¨
 #uploadHostDailyCheckReport 1>/dev/null
